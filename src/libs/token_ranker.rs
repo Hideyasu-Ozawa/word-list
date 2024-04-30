@@ -18,3 +18,15 @@ pub fn rank_tokens(tokens: Vec<String>) -> Vec<(String, i32)> {
 
     ranking
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_rank_tokens() {
+        let tokens = vec!["a".to_string(), "b".to_string(), "a".to_string()];
+        let result = rank_tokens(tokens);
+        assert_eq!(result, vec![("a".to_string(), 2), ("b".to_string(), 1)]);
+    }
+}
